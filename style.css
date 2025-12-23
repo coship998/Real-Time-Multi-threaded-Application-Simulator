@@ -1,0 +1,130 @@
+:root {
+    --primary-bg: #0f172a;
+    --secondary-bg: #1e293b;
+    --accent: #3b82f6;
+    --text: #f1f5f9;
+    --border: #334155;
+    --new: #64748b;
+    --ready: #3b82f6;
+    --running: #10b981;
+    --waiting: #f59e0b;
+    --terminated: #ef4444;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+    color: var(--text);
+}
+
+header, footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.2);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.status-panel {
+    background: rgba(255,255,255,0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.input-section {
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--secondary-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-family: monospace;
+}
+
+.controls {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+button {
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#resetBtn {
+    background: #6b7280;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.legend span {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.visualization {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#threadContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.thread {
+    width: 130px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.NEW { background: var(--new); }
+.READY { background: var(--ready); }
+.RUNNING { background: var(--running); box-shadow: 0 0 15px var(--running); }
+.WAITING { background: var(--waiting); }
+.TERMINATED { background: var(--terminated); }
+
+#counterBox {
+    padding: 1.2rem;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
