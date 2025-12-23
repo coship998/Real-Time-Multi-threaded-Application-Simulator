@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multithreading Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Multithreading Application Simulator</h1>
+    <p>Visualize thread states and synchronization in real-time.</p>
+</header>
+
+<main>
+
+    <!-- STATUS PANEL -->
+    <section class="status-panel">
+        <p><strong>Execution Model:</strong> Many-to-One / One-to-Many</p>
+        <p><strong>Synchronization:</strong> Semaphore Enabled / Disabled</p>
+    </section>
+
+    <!-- INPUT -->
+    <section class="input-section">
+        <label for="logInput">Paste the simulation log (output_log.txt content):</label>
+        <textarea id="logInput" placeholder="Thread 0 -> NEW&#10;Thread 0 -> READY&#10;..."></textarea>
+
+        <div class="controls">
+            <button id="startBtn" onclick="startSimulation()">Start Simulation</button>
+            <button id="resetBtn" onclick="resetSimulation()">Reset</button>
+
+            <label for="speedSlider">Animation Speed:</label>
+            <input type="range" id="speedSlider" min="200" max="2000" value="800" step="100">
+        </div>
+    </section>
+
+    <!-- LEGEND -->
+    <section class="legend">
+        <span class="NEW">NEW</span>
+        <span class="READY">READY</span>
+        <span class="RUNNING">RUNNING</span>
+        <span class="WAITING">WAITING</span>
+        <span class="TERMINATED">TERMINATED</span>
+    </section>
+
+    <!-- VISUALIZATION -->
+    <section class="visualization">
+        <div id="threadContainer"></div>
+
+        <div id="counterBox">
+            <h2>Shared Counter: <span id="counter">0</span></h2>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Educational simulator for demonstrating multithreading, scheduling, and synchronization.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
